@@ -1,11 +1,8 @@
-# # Part Three
+import heapq
+import networkx as nx
+from collections import *
 
-# ### part3 (a)
 
-# Implementation of Dijkstra algorithm. The function takes in input an author (id) and returns the total weight of the
-# shortest path connecting the input author and the source (Aris). As a measure of distance
-# Jaccard weight w(a1,a2) as defined previously is adopted. If the node given as target is not found in the graph,
-# or, similarly, is not connected to the source, a message is printed.
 
 def shortestPath(G, source, target):
     # Check whether input author exists in graph
@@ -13,7 +10,7 @@ def shortestPath(G, source, target):
         return ("Node " + str(target) + " is NOT in the graph.")
 
     # Check whether there is a path from input author to Aris
-    if not nx.has_path(G, aris, target):
+    if not nx.has_path(G, source, target):
         return "There is no path from " + str(source) + " to " + str(target)
 
     # Initialize queue
@@ -42,14 +39,6 @@ def shortestPath(G, source, target):
                     heapq.heappush(Q, (G[t[1]][neig]["weight"] + t[0], neig))
 
 
-
-                    # First, the target is taken as input from user
-
-# ### part3 (b)
-
-# The following function implements again Dijikstra algorithm to compute the total weight of the shortest paths from each node in q to all the nodes in the graph.
-# Specifically, a dictionary having as keys the nodes of the graph and as values the minimum between the weights of the shortest paths to the elements of q.
-# In other words, the format of the output is as follows: { node : minimum weight of shortest path from node to one of the query items}
 
 def shortestPath_all(G, q):  # target
 
@@ -86,7 +75,3 @@ def shortestPath_all(G, q):  # target
     minimums = list(map(min, allpaths.values()))
     # create and return the dictionary described above
     return dict(zip(nodes, minimums))
-
-
-
-
