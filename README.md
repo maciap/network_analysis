@@ -13,7 +13,7 @@ The user is allowed to choose the data to be analysed.
 
 1. __`main.py`__:
 > This module calls the functions contained in the scripts below in orded to tidily present the results of the exercises given in 
-[Homework 4](http://aris.me/contents/teaching/data-mining-ds-2017/homeworks/homework4.pdf).
+[Homework 4](http://aris.me/contents/teaching/data-mining-ds-2017/homeworks/homework4.pdf). The user may be prompted for input.
 
 2. __`graph.py`__:
 > This module provides the code necessary in order to load the chosen data set and creates a graph to model them. 
