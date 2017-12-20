@@ -43,3 +43,6 @@ The user is allowed to choose the data to be analysed.
 > * shortestPath: *it solves the shortest path problem, when a single source and a single target are of interest. An author is chosen by the user and the total weight of the shortest path from him to Aris Anagnostopoulos is returned, provided it exists.* 
 > * shortestPath_all: *This function takes in input a set I of nodes of the graph and for each vertex of the networks, it computes the minimum between the shortest path weights from it to any element of I. Clearly, if a node is not connected to any vertex belonging to I, it is not included in the output.*
 
+6.__`.ipynb`__:
+> An Ipython Notebook is additionally provided, which contains the entire code, briefly explained and the results of the analysis. 
+
