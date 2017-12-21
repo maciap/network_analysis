@@ -44,7 +44,7 @@ The result is a bar chart useful in order to visually assess every centrality me
 4.__`hop_distance.py`__:
 > This file is composed by a single function: 
 
-> *hop_d(children, dist, output_set, G): *this is a recursive function that, given author (children), an integer (d), an empty set (output_set) and the graph G, returns the set of all the authors having hop distance at most equal to d with the input author. A graph having them as nodes can thus be created and visualized.*
+> * hop_d(children, dist, output_set, G): *this is a recursive function that, given author (children), an integer (d), an empty set (output_set) and the graph G, returns the set of all the authors having hop distance at most equal to d with the input author. A graph having them as nodes can thus be created and visualized.*
 
 5.__`shortest_path.py`__:
 > The last script furnishes two functions based on Dijikstra's algorithm.
