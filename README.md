@@ -9,6 +9,27 @@ The data in usage is the DBLP data set. It contains information concerning Compu
 In particular, not only the complete but also a reduced version of the data set are taken into account. 
 The user is allowed to choose the data to be analysed. 
 
+## Procedures 
+> * Exercise 1:
+First of all, through the function 'choose data' the user is allowed to choose whether to load full or reduced json file. 
+Then the function ‘import data’ import the file chosen by the user.
+By the ‘create graph’ this rawdata is elaborated and a graph like structure is obtained from it, having as weight of  edges the Jaccard distance between the nodes. In order to obtain the graph, the following procedure is used. It is necessary to iterate through all the authors of the entire collection of publications. In case a new author is found, a vertex is created and its attributes are initialized. At each iteration, moreover, the attributes are updated. Once, the vertices have been defined, it is possible to connect them by edges as previously explained. The strategy adopted involves defining a nested list in which every inner array contains the author ids associated with a given publication. Each distinct combination of researchers in any inner list is connected by an edge, properly weighted.
+Using the library function of networkx, we retrieve information on the graph. (nx.info())
+
+> * Exercise 2:
+After a conference id is taken as input from the user, a list of authors who participated to the conference is built and used to create a subgraph (using subgraph method from networkx library).
+Then, by calling the ‘compute centrality measures’ function on the obtained subgraph we assign to dict_dc, dict_close, dict_bet, dict_eig respectively the values of degree, closeness, betweenness and eigenvector centrality. Through ’centrality measures plot’, for each centrality measure, strip plot and bar chart are plotted. Acting  on these centrality dictionaries, ‘scatter plot matrix’ function shows the pairwise relationships between these centrality measures. And the ‘draw violins’ function gives the violin plots if there are at least 15 different values for a given measure.
+Calling the ‘bar plot degree’ on the subgraph we obtain a bar plot having in x-axis the degrees and in y-axis their respective frequencies.
+For the  second part of the exercise, the user is asked to give an author id and an integer as input, and from those, by calling the ‘hop d’ function a set containing all the author ids up to distance d from the author id given in input is returned. With this set, calling again the networkx library function subgraph, a subgraph containing these author ids as nodes is built and then shown by the ‘plot graph’ function. The developed algorithm is a recursive one. At the first level of the recursion tree, the neighbours of the input node are stored in a set. The procedure continues by adding, at each level, the distinct neighbours of the nodes included at the previous step. Each time the function is called, d is decreased until the base case is reached, i.e. d=0.
+
+> * Exercise 3:
+In this part, the user is asked for a target node to calculate the shortest distance from it to Aris. Here, in order to calculate it, the usage of the ‘shortestPath’ function implementing a Dijkstra algorithm is needed.
+This function prints out the shortest path weight if the nodes are connected, if not, it prints a message saying whether the target node is actually a part of the graph or the nodes are not connected between each-other.
+Finally, for the last task, with the help of ‘shortestPath all’ function, after the user puts in input a query composed of author ids, this function returns a dictionary where the keys are the nodes of the graph and the values are the weights of the minimum shortest distance between the node and one of the query items.
+Afterwards, a nice printout of the result obtained Is shown.
+The developed algorithm is a recursive one. At the first level of the recursion tree, the neighbours of the input node are stored in a set. The procedure continues by adding, at each level, the distinct neighbours of the nodes included at the previous step. Each time the function is called, d is decreased until the base case is reached, i.e. d=0.
+
+
 ## Script descriptions
 
 1. __`main.py`__:
