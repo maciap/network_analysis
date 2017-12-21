@@ -18,17 +18,20 @@ The user is allowed to choose the data to be analysed.
 2. __`graph.py`__:
 > This module provides the code necessary in order to load the chosen data set and creates a graph to model them. 
 >	Four functions are provided:
+
 >  * choose_data: *the user is prompted to choose the complete or reduced data set.*
->  * import_data: *the desired data set is returned.*
->  * create_graph: *the graph is retuned.*
->  * plot_graph: *the graph is plotted.*
+>  * import_data: *takes in input the choice of the user and returnes the desired data set.*
+>  * create_graph: *takes in input the required dataset and returnes the relative graph.*
+>  * plot_graph: *takes in input the graph, the color of which the user want the graph and if asked, the author whose the user want
+>  * to see the node in the graph. Returns the graph plotted of the color asked ( with a different color for the autor in input if
+>  * specified).*
 
 3.__`centrality.py`__:
 > This script contains functions that allows to compute and visualize different centrality measures associated with each node in the 
 > graph. The following procedures are defined:
 
->* bar_plot_degree: *it displays a bar chart of the node degrees.*
 >* compute_centrality_measures: *Four measures for each node, namely degree, betweeness, closeness and eigenvector centrality, are computed.*
+>* bar_plot_degree: *it displays a bar chart of the node degrees.*
 > * bar_plot: *A bar chart useful in order to visually assess every centrality measure is obtained.*
 > * strip_plot: *A strip-plot is built as an alternative to the bar-chart.* 
 > * centrality_measures_plot: *The code of this function displays a plot including a bar chart and a strip-plot for each centrality measure.*
@@ -44,5 +47,5 @@ The user is allowed to choose the data to be analysed.
 > * shortestPath_all: *This function takes in input a set I of nodes of the graph and for each vertex of the networks, it computes the minimum between the shortest path weights from it to any element of I. Clearly, if a node is not connected to any vertex belonging to I, it is not included in the output.*
 
 6.__`HW4.ipynb`__:
-> An Ipython Notebook is additionally provided, which contains the entire code, briefly explained as well as the results of the analysis.  
+> An Ipython Notebook is additionally provided, which contains the entire code, briefly explained as well as the results of the analysis. 
 
