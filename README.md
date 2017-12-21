@@ -19,23 +19,27 @@ The user is allowed to choose the data to be analysed.
 > This module provides the code necessary in order to load the chosen data set and creates a graph to model them. 
 >	Four functions are provided:
 
->  * choose_data: *the user is prompted to choose the complete or reduced data set.*
->  * import_data: *takes in input the choice of the user and returnes the desired data set.*
->  * create_graph: *takes in input the required dataset and returnes the relative graph.*
->  * plot_graph: *takes in input the graph, the color of which the user want the graph and if asked, the author whose the user want
->  * to see the node in the graph. Returns the graph plotted of the color asked ( with a different color for the autor in input if
->  * specified).*
+>  * choose_data(): *the user is prompted to choose the complete or reduced data set.*
+>  * import_data(full): *returns the desired data set based on the user's choice (full is a boolean variable, set True if the user's
+>  * choice in the function 'choose_data' was y).*
+>  * create_graph(data_to_load): *from the required data set as input, returns the relative graph.*
+>  * plot_graph(G, color, author = None): *takes as input the graph G, the color which the user want the graph is displayed and if
+>  * asked, the author whose the user want to see the node in the graph. Returns the graph plotted of the color asked ( with a different >  * color for the autor in input, if specified).*
 
 3.__`centrality.py`__:
 > This script contains functions that allows to compute and visualize different centrality measures associated with each node in the 
 > graph. The following procedures are defined:
 
->* compute_centrality_measures: *Four measures for each node, namely degree, betweeness, closeness and eigenvector centrality, are computed.*
->* bar_plot_degree: *it displays a bar chart of the node degrees.*
-> * bar_plot: *A bar chart useful in order to visually assess every centrality measure is obtained.*
-> * strip_plot: *A strip-plot is built as an alternative to the bar-chart.* 
-> * centrality_measures_plot: *The code of this function displays a plot including a bar chart and a strip-plot for each centrality measure.*
-> * scatterplot_matrix: *A scatterplot matrix is built. This is useful when the aim is exploring the relationship between the different centrality measures. On the main diagonal, histograms are displayed, which is appropriate only when the number of distinct values of the measures is not extremely low.*
+> * compute_centrality_measures(subgr): *takes as input a subgraph built on the authors who published at least once in the asked 
+> * conference. Returns four measures for each node: degree, betweeness, closeness and eigenvector centrality.*
+> * bar_plot_degree(G): *given the graph G as input, it displays a bar chart of the node degrees.*
+> * bar_plot(d): *d is one of the measures computed in the function 'compute_centrality_measure' (type : dictionary).
+> * The result is a bar chart useful in order to visually assess every centrality measure is obtained.*
+> * strip_plot(d): *as the function bar_plot takes in input one of the measures (d) and a strip-plot is built as an alternative to the bar-chart.* 
+> * centrality_measures_plot(dict_dc, dict_close, dict_bet, dict_eig): *the input are all the measures calculated before, the code of this function displays a plot including a bar chart and a strip-plot for each centrality measure.*
+> * scatterplot_matrix: *from the measures as input a scatterplot matrix is built. This is useful when the aim is exploring the relationship between the different centrality measures. On the main diagonal, histograms are displayed, which is appropriate only when the number of distinct values of the measures is not extremely low.*
+> * violin_plot(x, title): shows the violin plot of x, allows to specify the title.*
+> * draw_violins(lst_dict): the input is a list of dictionaries, each dictionary contains the values of one measure for each nodes. The output is a violin plot if the values in a dictionary are at least 15. 
 
 4.__`hop_distance.py`__:
 > This file is composed by a single function: 
