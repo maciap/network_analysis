@@ -8,11 +8,11 @@ def compute_centrality_measures(subgr):
     #Degree centrality
     dict_dc = nx.degree_centrality(subgr)
     #Closeness centrality
-    dict_close = nx.closeness_centrality(subgr)
+    dict_close = nx.closeness_centrality(subgr, distance = 'weight')
     #Betweeness centrality
-    dict_bet = nx.betweenness_centrality(subgr)
+    dict_bet = nx.betweenness_centrality(subgr, weight = 'weight')
     #Eigenvector centrality
-    dict_eig = nx.eigenvector_centrality(subgr, max_iter = 1000)
+    dict_eig = nx.eigenvector_centrality(subgr, max_iter = 1000, weight = 'weight')
 
     return [dict_dc, dict_close, dict_bet, dict_eig]
 
@@ -97,31 +97,18 @@ def scatter_plot_matrix(dict_dc, dict_bet, dict_close, dict_eig):
     sns.pairplot(df, kind = 'reg', palette = 'Blues_d')
     plt.show()
     
-def violin_plot(dict_dc, dict_bet, dict_close, dict_eig):   
-    #Degree centrality
+def violin_plot(x, title):
+    plt.ylabel("Distribution")
+    plt.title(title)
+    sns.violinplot(y = list(x))
+    
+def draw_violins(lst_dict):
+    titles = {0 : "Degree centrality", 1: "Betweeness centrality", 2: "Closeness centrality", 3: "Eigenvector centrality"}
+    k = 221
     plt.figure(figsize = (20,30))
-    plt.subplot(221)
-    plt.title("Degree centrality")
-    plt.ylabel("Distribution")
-    sns.violinplot(y = list(dict_dc.values()))
-    
-    
-    #Betwness centrality
-    plt.subplot(222)
-    plt.title("Betweenness centrality")
-    plt.ylabel("Distribution")
-    sns.violinplot(y = list(dict_bet.values()))
-    
-    #Closeness centrality
-    plt.subplot(223)
-    plt.title("Closeness centrality")
-    plt.ylabel("Distribution")
-    sns.violinplot(y = list(dict_close.values()))
-    
-    #Eigenvector centrality
-    plt.subplot(224)
-    plt.title("Eigenvector centrality")
-    plt.ylabel("Distribution")
-    sns.violinplot(y = list(dict_eig.values()))
-    
+    for i in range(len(lst_dict)):
+        if len(set(lst_dict[i].values())) > 15: 
+            plt.subplot(k)
+            violin_plot(lst_dict[i].values(), titles[i])
+            k+=1
     plt.show()
