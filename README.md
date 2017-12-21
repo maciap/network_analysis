@@ -38,7 +38,7 @@ conference. Returns four measures for each node: degree, betweeness, closeness a
 > * bar_plot_degree(G): *given the graph G as input, it displays a bar chart of the node degrees.*
 > * bar_plot(d): *d is one of the measures computed in the function 'compute_centrality_measure' (type : dictionary).
 The result is a bar chart useful in order to visually assess every centrality measure is obtained.*
-> * strip_plot(d): *as the function bar_plot takes in input one of the measures (d) and a strip-plot is built as an alternative to the bar-chart.* 
+> * strip_plot(d): *as the function 'bar_plot' takes in input one of the measures (d) and a strip-plot is built as an alternative to the bar-chart.* 
 > * centrality_measures_plot(dict_dc, dict_close, dict_bet, dict_eig): *the input are all the measures calculated before, the code of this function displays a plot including a bar chart and a strip-plot for each centrality measure.*
 > * scatterplot_matrix(dict_dc, dict_bet, dict_close, dict_eig): *from the measures as input a scatterplot matrix is built. This is useful when the aim is exploring the relationship between the different centrality measures. On the main diagonal, histograms are displayed, which is appropriate only when the number of distinct values of the measures is not extremely low.*
 > * violin_plot(x, title): *shows the violin plot of x, allows to specify the title.*
