@@ -31,24 +31,26 @@ asked, the author whose the user want to see the node in the graph. Returns the 
 > graph. The following procedures are defined:
 
 > * compute_centrality_measures(subgr): *takes as input a subgraph built on the authors who published at least once in the asked 
-conference. Returns four measures for each node: degree, betweeness, closeness and eigenvector centrality.*
+conference. Returns four measures for each node: degree, betweeness, closeness and eigenvector centrality. The measures are collected in dictionaries, one for each measure, where the key is the node and the value is the measure for that node.*
 > * bar_plot_degree(G): *given the graph G as input, it displays a bar chart of the node degrees.*
 > * bar_plot(d): *d is one of the measures computed in the function 'compute_centrality_measure' (type : dictionary).
 The result is a bar chart useful in order to visually assess every centrality measure is obtained.*
 > * strip_plot(d): *as the function bar_plot takes in input one of the measures (d) and a strip-plot is built as an alternative to the bar-chart.* 
 > * centrality_measures_plot(dict_dc, dict_close, dict_bet, dict_eig): *the input are all the measures calculated before, the code of this function displays a plot including a bar chart and a strip-plot for each centrality measure.*
-> * scatterplot_matrix: *from the measures as input a scatterplot matrix is built. This is useful when the aim is exploring the relationship between the different centrality measures. On the main diagonal, histograms are displayed, which is appropriate only when the number of distinct values of the measures is not extremely low.*
-> * violin_plot(x, title): shows the violin plot of x, allows to specify the title.*
-> * draw_violins(lst_dict): the input is a list of dictionaries, each dictionary contains the values of one measure for each nodes. The output is a violin plot if the values in a dictionary are at least 15. 
+> * scatterplot_matrix(dict_dc, dict_bet, dict_close, dict_eig): *from the measures as input a scatterplot matrix is built. This is useful when the aim is exploring the relationship between the different centrality measures. On the main diagonal, histograms are displayed, which is appropriate only when the number of distinct values of the measures is not extremely low.*
+> * violin_plot(x, title): *shows the violin plot of x, allows to specify the title.*
+> * draw_violins(lst_dict): *the input is a list of the measures for each nodes. The output is a violin plot if the values in a dictionary are at least 15.*
 
 4.__`hop_distance.py`__:
 > This file is composed by a single function: 
-> *hop_d: *this is a recursive function that, given author and an integer **_d_**, returns the set of all the authors having hop distance at most equal to **_d_** with the input author. A graph having them as nodes can thus be created and visualized.*
+
+> *hop_d(children, dist, output_set, G): *this is a recursive function that, given author (children), an integer (d), an empty set (output_set) and the graph G, returns the set of all the authors having hop distance at most equal to d with the input author. A graph having them as nodes can thus be created and visualized.*
 
 5.__`shortest_path.py`__:
 > The last script furnishes two functions based on Dijikstra's algorithm.
-> * shortestPath: *it solves the shortest path problem, when a single source and a single target are of interest. An author is chosen by the user and the total weight of the shortest path from him to Aris Anagnostopoulos is returned, provided it exists.* 
-> * shortestPath_all: *This function takes in input a set I of nodes of the graph and for each vertex of the networks, it computes the minimum between the shortest path weights from it to any element of I. Clearly, if a node is not connected to any vertex belonging to I, it is not included in the output.*
+
+> * shortestPath(G, source, target): *it solves the shortest path problem, when a single source and a single target are of interest. An author is chosen by the user and the total weight of the shortest path from him to Aris Anagnostopoulos is returned, provided it exists.* 
+> * shortestPath_all(G, q): *this function takes in input the graph G and a set q of nodes of the graph and for each vertex of the networks, it computes the minimum between the shortest path weights from it to any element of I. Clearly, if a node is not connected to any vertex belonging to I, it is not included in the output.*
 
 6.__`HW4.ipynb`__:
 > An Ipython Notebook is additionally provided, which contains the entire code, briefly explained as well as the results of the analysis. 
