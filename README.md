@@ -20,8 +20,8 @@ The user is allowed to choose the data to be analysed.
 >	Four functions are provided:
 
 >  * choose_data(): *the user is prompted to choose the complete or reduced data set.*
->  * import_data(full): *returns the desired data set based on the user's choice (full is a boolean variable, set True if the user's
->  * choice in the function 'choose_data' was y).*
+>  * import_data(full): returns the desired data set based on the user's choice (full is a boolean variable, set True if the user's
+choice in the function 'choose_data' was y).
 >  * create_graph(data_to_load): *from the required data set as input, returns the relative graph.*
 >  * plot_graph(G, color, author = None): *takes as input the graph G, the color which the user want the graph is displayed and if
 >  * asked, the author whose the user want to see the node in the graph. Returns the graph plotted of the color asked ( with a different >  * color for the autor in input, if specified).*
