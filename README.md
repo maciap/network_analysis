@@ -27,7 +27,7 @@ In this part, the user is asked for a target node to calculate the shortest dist
 This function prints out the shortest path weight if the nodes are connected, if not, it prints a message saying whether the target node is actually a part of the graph or the nodes are not connected between each-other.
 Finally, for the last task, with the help of ‘shortestPath all’ function, after the user puts in input a query composed of author ids, this function returns a dictionary where the keys are the nodes of the graph and the values are the weights of the minimum shortest distance between the node and one of the query items.
 Afterwards, a nice printout of the result obtained Is shown.
-The developed algorithm is a recursive one. At the first level of the recursion tree, the neighbours of the input node are stored in a set. The procedure continues by adding, at each level, the distinct neighbours of the nodes included at the previous step. Each time the function is called, d is decreased until the base case is reached, i.e. d=0.
+
 
 
 ## Script descriptions
