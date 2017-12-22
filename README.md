@@ -3,11 +3,22 @@ Network analysis
 
 The scripts proposed in this repository solve the exercises in Homework 4, Algorithmic Methods for Data Mining, Master's degree in Data Science, Sapienza University of Rome. 
 
+The scripts are written in Python 3. The following libraries are additionally required: 
+* json
+* networkx
+* itertools 
+* matplotlib.pyplot
+* seaborn 
+* pandas
+* collections
+* heapq 
+
 ## Data
 
 The data in usage is the DBLP data set. It contains information concerning Computer Science academic publications, in json format.  
 In particular, not only the complete but also a reduced version of the data set are taken into account. 
 The user is allowed to choose the data to be analysed. 
+
 
 ## Procedures 
 > * Exercise 1:
