@@ -54,10 +54,13 @@ def plot_graph(G, color, author = None ):
     pos = nx.random_layout(G)
     degrees = nx.degree(G)
     #Plotting the graph
-    nx.draw_networkx_nodes(G, pos, node_shape = "o", node_size =[v*20 for v in degrees.values()] , node_color = color)
-    nx.draw_networkx_edges(G, pos, width = 0.2 , edge_color = "red", alpha = 0.5)
     if author is not None:
         name = G.node[author]['name'] 
-        nx.draw_networkx_labels(G, {author : pos[author]}, labels = {author: name})
+        nx.draw_networkx_labels(G, {author : pos[author]}, labels = {author: name}, font_size = 12)
+        nx.draw_networkx_nodes(G, pos, node_shape = "o", node_size =[v for v in degrees.values()] , node_color = color)
+        nx.draw_networkx_edges(G, pos, width = 0.2 , edge_color = "red", alpha = 0.5)
+    else:
+        nx.draw_networkx_nodes(G, pos, node_shape = "o", node_size =[v*20 for v in degrees.values()] , node_color = color)
+        nx.draw_networkx_edges(G, pos, width = 0.2 , edge_color = "red", alpha = 0.5)
     plt.axis('off')
     plt.show()
