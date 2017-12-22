@@ -61,6 +61,7 @@ def plot_graph(G, color, author = None ):
         nx.draw_networkx_edges(G, pos, width = 0.2 , edge_color = "red", alpha = 0.5)
     else:
         nx.draw_networkx_nodes(G, pos, node_shape = "o", node_size =[v*20 for v in degrees.values()] , node_color = color)
+        #use instead node_size =[(1 + v*20) for v in degrees.values()] to also visualize nodes having degree zero
         nx.draw_networkx_edges(G, pos, width = 0.2 , edge_color = "red", alpha = 0.5)
     plt.axis('off')
     plt.show()
